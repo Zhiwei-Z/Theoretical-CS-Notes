@@ -2,65 +2,164 @@
 % This is all preamble stuff that you don't have to worry about.
 % Head down to where it says ``Start here"
 % --------------------------------------------------------------
- 
+
 \documentclass[12pt]{article}
- 
+
+
+
 \usepackage[margin=1in]{geometry} 
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{graphicx}
+\usepackage{tabto}
 
 % \newtheorem{problem}{Problem}
 % \newtheorem{solution}{Solution}
- 
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 
 \newenvironment{solution}[2][Solution]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
- 
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
 \newenvironment{problem}[2][Problem]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
- 
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
 \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{claim}[2][Claim]{\begin{trivlist}
 		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{reflection}[2][Reflection]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{proposition}[2][Proposition]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{definition}[2][Definition]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
 
 \newenvironment{example}[2][Example]{\begin{trivlist}
 		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-	
+
 \newenvironment{algorithm}[2][Algorithm]{\begin{trivlist}
 		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
- 
+
 \begin{document}
- 
-% --------------------------------------------------------------
-%                         Start here
-% --------------------------------------------------------------
- 
-%\renewcommand{\qedsymbol}{\filledbox}
- 
-\title{Topic}
-\author{Zhiwei Zhang}
- 
-\maketitle
+	
+	% --------------------------------------------------------------
+	%                         Start here
+	% --------------------------------------------------------------
+	
+	%\renewcommand{\qedsymbol}{\filledbox}
+	
+	\title{Matroid}
+	\author{Zhiwei Zhang}
+	
+	\maketitle
+	
+	\section{Matriod}
+	Matriod $M = (S, l)$ is an ordered pair such that: 
+	\begin{enumerate}
+		\item $S$ is non-empty and finite
+		\item $l \subseteq 2^{S}$ ($l$ is a set containing subsets of $S$), and $\emptyset \in l$
+		\item \textbf{Downward Closure}: If $B \in l$, $A \in B$, then $A \in l$. Call $B$ or any its subset an \textbf{"independent set"}.
+		\item \textbf{Augmentation}: If $A \in l, B \in l,$ and $|A| < |B|$, then $\exists x \in (B \backslash A)$ such that $A \cup {x} \in l$
+	\end{enumerate}
+	
+	\section{Matriod in Graph}
+	For an undirected graph $G = (V, E)$, define Matroid $M_G = (S_G, l_G)$ as the following:
+	\begin{enumerate}
+		\item $S_G = E$, or the edge set of the graph
+		\item If $A$ is a subset of $E$, $A \in l_C$ if and only if $A$ doesn't contain circles. Or equivalently, a collection of edges $A$ is an independent iff $G(V, A)$ creates a \textbf{forest}.
+	\end{enumerate}
+	Now we prove $M_G$ satisfies all conditions of a matroid:
+	\begin{enumerate}
+		\item $S_G$ is obviously non-empty and finite
+		\item \textbf{Downward Closure}: It's trivial that removing edges from a forest will also create a forest
+		\item \textbf{Augmentation}: It's easy to prove that \textbf{a forest with $k$ edges have $|V| - k$ trees (counting any isolated vertex also as a tree)}. Next, if $G(V, A), G(V, B)$ are two forests of $G$, and $|A| < |B|$. Then $G(V, A)$ has $|V| - |A|$ trees, more than the trees in $G(V, B)$ which is $|V| - |B|$. Since $G(V, B)$ has less trees, there must be an edge $e \in B \backslash A$ that connects 2 trees (can also be vertices) of $A$. Since adding an edge between two trees will not create cycles, $A \cup \{e\} \in l_G$.
+	\end{enumerate}
+	\begin{definition}{1}
+		If there exists an element $x$ not in an independent set $A$, and $A \cup {x} \in l$, we call $A$ an \textbf{extendable} independent subset, and $x$ an \textbf{extension} to $A$. 
+	\end{definition}
+	\begin{definition}{2}
+		If $A$ doesn't have an extension, we call $A$ a \textbf{maximal} independent subset.
+	\end{definition}
+	
+	Notice that because of the augmentation property, we can derive the following theorem:
+	
+	\begin{theorem}
+		All maximal independet subsets have the same size.
+	\end{theorem}
+	The proof is trivial: or else the larger independent subsets can give extension elements to  smaller independet subsets.
+	
+	\section{Weighted Matroid}
+	A matroid $M(S, l)$ is weighted if it's associated with a weight function $w(\cdot): S \to \mathbb{R}^{+}$. The independent subset with the maximum weight is called the \textbf{\textit{optimal}} independent subset of the matroid. \\
+	\newline
+	Since all the weights are positive, the \textbf{\textit{optimal}} independent subset is also a \textbf{\textit{maximal}} independent subset.
+	\subsection{Matroid Greedy Algorithm}
+	\textbf{Greedy(M, w):}
+	\begin{enumerate}
+		\item $A = \emptyset$
+		\item sort $M . S$ into monotonically decreasing order by weight $w$
+		\item for each $x \in M . S ,$ taken in monotonically decreasing order by weight $w ( x )$
+		\item \quad if $A \cup \{ x \} \in M . \mathcal { I }$
+		\item \qquad $A = A \cup \{ x \}$
+		\item return $A$.
+	\end{enumerate}
+	Weighted matroid has the property that Matroids exhibit the greedy-choice property.
+	\begin{lemma}{1}
+		Suppose that $M = (S, l)$ is a weighted matroid with weight function $w$ and that $S$
+		is sorted into monotonically decreasing order by weight. Let $x$ be the first element
+		of $S$ such that $\{x\}$ is independent, if any such $x$ exists. If $x$ exists, then there exists
+		an optimal subset $A$ of $S$ that contains $x$.
+	\end{lemma}
+	\begin{proof}
+		If such element doesn't exist, then $l$ obviously just contains the empty set.\\
+		\newline
+		If such element $x$ exist, we prove by contradiction, supposing $B$ is the optimal independent subset. Construct independent subset $A$ from $\{x\}$ and keep adding elements from $B$ using augmentation to make them the same size. Therefore $A = B - {y} + {x}$ and  $w(y) < w(x)$. Therefore $A$ is obviously more weighted than $B$.
+	\end{proof}
+	
+	\begin{lemma}{2}
+		Let $M$ be any matroid. If $x$ is an element of $S$ that is an extension of some independent subset $A$ of $S$, then $x$ is also an extension of $\emptyset$.
+	\end{lemma}
+	\begin{proof}
+		By downward closure or heridity, $\{x\}$ is a subset of $A$. Therefore $\{x\}$ is a valid independent subset of the matroid.
+	\end{proof}
+	
+	\begin{lemma}{3}
+		Let $M$ be any matroid. If $\{x\}$ is not independent, then $x$ is not and extension to any independent subset.
+	\end{lemma}
+	\begin{proof}
+		Lemma 2's contrapositive.
+	\end{proof}
+	Now we can prove that:
+	\begin{lemma}{4}
+		The greedy algorithm produces an optimal independent subset.
+	\end{lemma}
+	\begin{proof}
+		Let $x$ be the first element of $S$ chosen by GREEDY for the weighted matroid
+		$M = ( S , l ) .$ The remaining problem of finding a maximum-weight indepen-
+		dent subset containing $x$ reduces to finding a maximum-weight independent subset
+		of the weighted matroid $M ^ { \prime } = \left( S ^ { \prime } , l ^ { \prime } \right) ,$ where
+		$$\begin{array} { l } { S ^ { \prime } = \{ y \in S : \{ x , y \} \in l \} } \\ { l ^ { \prime } = \{ B \subseteq S - \{ x \} : B \cup \{ x \} \in l \} } \end{array}$$
+		and the weight function for $M ^ { \prime }$ is the weight function for $M ,$ restricted to $S ^ { \prime } .$ (We call $M ^ { \prime }$ the \textbf{contraction} of $M$ by the element $x$ .)\\
+		\newline
+		In other words, there's a bijection between optimal independet sets of $M$ containing $x$ and the optimal independent sets of $M'$.
+	\end{proof}
 
+
+\medskip
+\begin{thebibliography}{9}
+	\bibitem{algBook}
+	 Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein 
+	 \textit{Introduction to Algorithms, Third Edition}. The MIT Press
+	 Cambridge, Massachusetts London, England. 2009
+\end{thebibliography}
 \end{document}
-
-
-
-
-
 
 
 

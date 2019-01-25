@@ -79,8 +79,8 @@
 	Now we prove $M_G$ satisfies all conditions of a matroid:
 	\begin{enumerate}
 		\item $S_G$ is obviously non-empty and finite
-		\item \textbf{Downward Closure}: It's trivial that removing edges from a forest will also create a forest
-		\item \textbf{Augmentation}: It's easy to prove that \textbf{a forest with $k$ edges have $|V| - k$ trees (counting any isolated vertex also as a tree)}. Next, if $G(V, A), G(V, B)$ are two forests of $G$, and $|A| < |B|$. Then $G(V, A)$ has $|V| - |A|$ trees, more than the trees in $G(V, B)$ which is $|V| - |B|$. Since $G(V, B)$ has less trees, there must be an edge $e \in B \backslash A$ that connects 2 trees (can also be vertices) of $A$. Since adding an edge between two trees will not create cycles, $A \cup \{e\} \in l_G$.
+		\item \textbf{Downward Closure (Inheritance)}: It's trivial that removing edges from a forest will also create a forest
+		\item \textbf{Augmentation (Exchange Property)}: It's easy to prove that \textbf{a forest with $k$ edges have $|V| - k$ trees (counting any isolated vertex also as a tree)}. Next, if $G(V, A), G(V, B)$ are two forests of $G$, and $|A| < |B|$. Then $G(V, A)$ has $|V| - |A|$ trees, more than the trees in $G(V, B)$ which is $|V| - |B|$. Since $G(V, B)$ has less trees, there must be an edge $e \in B \backslash A$ that connects 2 trees (can also be vertices) of $A$. Since adding an edge between two trees will not create cycles, $A \cup \{e\} \in l_G$.
 	\end{enumerate}
 	\begin{definition}{1}
 		If there exists an element $x$ not in an independent set $A$, and $A \cup {x} \in l$, we call $A$ an \textbf{extendable} independent subset, and $x$ an \textbf{extension} to $A$. 

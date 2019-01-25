@@ -71,7 +71,17 @@ Given the input bitstring is $"x = x_1x_2 \cdots x_n"$, and the parity function 
 $$f(x) = x_{i_1} + x_{i_2} + \cdots + x_{i_k} \pmod 2 .$$
 (Short notice that we actually substitute "$k$" for "$n$" in the original problem brief). \\
 \newline
-Let $B = \{x_{i_1} , x_{i_2} , \cdots , x_{i_k}\}$
+Let $B = \{x_{i_1} , x_{i_2} , \cdots , x_{i_k}\}$\\
+\begin{definition}[Notation Definition]{}
+Here we specify a notiation: \\
+For a input $x$ of length $n$, we use 
+$$Parity(x(S)) = \sum\limits_{i \in S}x_i \pmod 2.$$  
+Specifically, if $S = B$, then $Parity(x(S)) = Parity(x(B)) = f(x)$
+\end{definition}
+
+\noindent We examine that for a random subset of bits $T$ (the indices of the bits), where $|T| = |B| = k$, if we take $s$ uniform random samples of inputs $x^{(1)}, x^{(2)}, \cdots, x^{(s)}$, what's the probability that it behaves exactly the same as the parity function.\\
+\newline
+We define event $A_s$ for a given subset $S$ as above: $\forall i \in \mathbb{Z} \cap [1, s]$, we have $Parity(x(S)) = f(x)$; and because of the property of binary addition, $P(A_s) = \frac{1}{2^s}$, where each input $x$ has a probability of 1/2 of behaving the same as the parity function. 
 
 
 \end{document}

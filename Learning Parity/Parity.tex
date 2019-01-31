@@ -85,7 +85,11 @@ We define event $A_s$ for a given subset $S$ as above: $\forall i \in \mathbb{Z}
 \newline
 Since there are at most $n \choose k$ subsets $S != B$, we have:
 $$P(\cup_{S}A_{S}) \leq {n \choose k}\frac{1}{2^s}$$
-If we want that probability to be less than $1/2$, we will get $s > \log{n \choose k} \approxeq k\log{n}$
+If we want that probability to be less than $1/2$, we will get $s > \log{n \choose k} \approxeq k\log{n}$.\\
+\newline
+Therefore we need $k\log{n}$ samples just to determine if the subset we try has decent probability of being the parity function. However, to determine which subset it is, we have to try $n \choose k$ times for all subsets. \\
+\newline
+Parity is especially hard to deal with, because everysubset has probability of $\frac{1}{2}$ behaving the same as the parity function on a given input since each bit can just simply flip and changes the parity from 0 to 1 or 1 to 0.
 
 
 \end{document}

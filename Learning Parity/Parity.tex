@@ -83,7 +83,9 @@ Specifically, if $S = B$, then $Parity(x(S)) = Parity(x(B)) = f(x)$
 \newline
 We define event $A_s$ for a given subset $S$ as above: $\forall i \in \mathbb{Z} \cap [1, s]$, we have $Parity(x(S)) = f(x)$; and because of the property of binary addition, $P(A_s) = \frac{1}{2^s}$, where each input $x$ has a probability of 1/2 of behaving the same as the parity function.\\
 \newline
-Since there are at most $n \choose k$ subsets $S != B$, we have
+Since there are at most $n \choose k$ subsets $S != B$, we have:
+$$P(\cup_{S}A_{S}) \leq {n \choose k}\frac{1}{2^s}$$
+If we want that probability to be less than $1/2$, we will get $s > \log{n \choose k} \approxeq k\log{n}$
 
 
 \end{document}

@@ -89,8 +89,20 @@ If we want that probability to be less than $1/2$, we will get $s > \log{n \choo
 \newline
 Therefore we need $k\log{n}$ samples just to determine if the subset we try has decent probability of being the parity function. However, to determine which subset it is, we have to try $n \choose k$ times for all subsets. \\
 \newline
-Parity is especially hard to deal with, because everysubset has probability of $\frac{1}{2}$ behaving the same as the parity function on a given input since each bit can just simply flip and changes the parity from 0 to 1 or 1 to 0.
+Parity is especially hard to deal with, because everysubset has probability of $\frac{1}{2}$ behaving the same as the parity function on a given input since each bit can just simply flip and changes the parity from 0 to 1 or 1 to 0. \\
+\newline
+Information Theory solution is not efficient enough.
 
+\section{Gaussian Elimination}
+We can rewrite the parity function as $f(x) = \sum_{i}^{}a_ix_i \pmod{2}$ where $a_i = 1$ iff $i \in B$.\\
+\newline
+Immediately, we think of setting up equations and use Gaussian Elimination to solve!. \\
+\newline
+Indeed, it's convenient and important that $\pmb{F_2}$ \textbf{is a field}, so we can find multiplicative inverses!\\
+\newline
+Therefore we just need $n$ linearly independent samples and solve the problem using Gaussian Elimination.\\
+\newline
+This is polynomial time, much better than the Information Theory solution.
 
 \end{document}
 

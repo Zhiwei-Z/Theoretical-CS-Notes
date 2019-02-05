@@ -56,10 +56,25 @@
  
 %\renewcommand{\qedsymbol}{\filledbox}
  
-\title{Note}
-\author{Zhiwei Zhang}
+\title{Dimension Argument}
+\author{UGTCS}
  
 \maketitle
+\section{Definitions}
+$GF(p^k) = $Galois Field of Cardinaly $p^k$.
+
+\section{Random Matrices}
+Let $M$ be an $n \times n$ matrix on $GF(2)$. Prove that $Pr[det(M) \not = 0] \geq \frac{1}{4}$
+
+\begin{proof}
+	$det(M) \not = 0 \Longleftrightarrow $ Every column is linearly indep.\\
+	\newline
+	$Pr[\text{each column is LI}] = \prod_{i}Pr[c_1, \cdots, c_i \text{ are LI } | c_1, \cdots, c_{i - 1} \text{ are LI}]$
+	$c1, \cdots, c_{i - 1} $ are LI iff sizeof(span($c_1, \cdots, c_{i - 1}$)) = $2^{i - 1}$\\
+	$Pr[c_1, \cdots, c_i \text{ are LI } | c_1, \cdots, c_{i - 1} \text{ are LI}] = 1 - \frac{2^{i - 1}}{2 ^ n}$\\
+	Use inequality:
+	$$a - x \geq 4^{-x} \forall x \in [0, 0.5]$$
+\end{proof}
 
 
 \end{document}

@@ -74,9 +74,24 @@ Let $M$ be an $n \times n$ matrix on $GF(2)$. Prove that $Pr[det(M) \not = 0] \g
 	$Pr[c_1, \cdots, c_i \text{ are LI } | c_1, \cdots, c_{i - 1} \text{ are LI}] = 1 - \frac{2^{i - 1}}{2 ^ n}$\\
 	Use inequality:
 	$$a - x \geq 4^{-x} \forall x \in [0, 0.5]$$
+	$$\prod_{i = 1}^{n}{1 - 2^{i - 1 - n}} \geq \prod{4^{2^{i - 1 - n}}} = 4^{-(2^{-1} + 2^{-2} + \cdots + 2^{-n})} \geq 4^{-1}$$
 \end{proof}
 
 
+\section{Polynomials}
+Prove a polynomial of degree $d$ has $\leq d$ real roots using Linear Algebra.
+
+\begin{proof}
+	Represent $c_0x^0 + c_1x^1 + \cdots$ as $[c_0, c_1, \cdots] \vec{c}$\\
+	If we have a root $r$, then $[1, r, r^2, \cdots] \cdot \vec{c} = \vec{0}$\\
+	For contradiction, assume $d + 1$ roots $r_1, r_2, \cdots, r_{d + 1}$, then $$\begin{bmatrix}
+	
+	\end{bmatrix} \begin{bmatrix}
+	
+	\end{bmatrix} = \vec{0}$$
+	Property of a Vandermonde Matrix $V$: $det(V) = \prod_{i \not = j}(\alpha_i - \alpha_j)$\\
+	Then the left matrix have all LI columns since no two roots are the same.
+\end{proof}
 \end{document}
 
 

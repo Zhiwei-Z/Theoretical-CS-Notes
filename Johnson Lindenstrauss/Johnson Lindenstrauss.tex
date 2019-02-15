@@ -1,0 +1,86 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says ``Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{tabto}
+
+% \newtheorem{problem}{Problem}
+% \newtheorem{solution}{Solution}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newenvironment{solution}[2][Solution]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{claim}[2][Claim]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{definition}[2][Definition]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\newenvironment{example}[2][Example]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+	
+\newenvironment{algorithm}[2][Algorithm]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Johnson-Lindenstrauss, Compress Sensing}
+\author{Zhiwei Zhang}
+ 
+\maketitle
+
+\section{Johnson-Lindenstrauss (JL)}
+\subsection{Formal Theorem}
+For a set of $n$ points $x _ { 1 } , \ldots , x _ { n } \in \mathbb { R } ^ { d }$, then for a random $k = \frac { c \log n } { \varepsilon ^ { 2 } }$ dimensional subspace, we project these points to this subspace. \\
+\newline 
+JL states that with probability $1 - \frac { 1 } { n ^ { c - 2 } }$, we have:
+$$
+( 1 - \varepsilon ) \sqrt { \frac { k } { d } } \left| x _ { i } - x _ { j } \right| \leq \left| y _ { i } - y _ { j } \right| \leq ( 1 + \varepsilon ) \sqrt { \frac { k } { d } } \left| x _ { i } - x _ { j } \right|
+$$
+Furthermore, $y_i$ is the projection of $x_i$ on to the subspace.
+\subsection{Intuitive Interpretation}
+$|x_i - x_j|$ is the original distance between two points, and similar for  $|y_i - y_j|$. Therefore the inequality is stating that after projecting to the subspace of dimension $k$, with high probability that the pariwise distances are scaled by $\sqrt{\frac{k}{d}}$ within factor of 1$\pm \varepsilon$
+
+
+
+\end{document}
+
+
+
+
+
+
+
+

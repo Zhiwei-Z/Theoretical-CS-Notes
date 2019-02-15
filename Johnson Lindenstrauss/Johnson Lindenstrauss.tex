@@ -73,6 +73,30 @@ Furthermore, $y_i$ is the projection of $x_i$ on to the subspace.
 \subsection{Intuitive Interpretation}
 $|x_i - x_j|$ is the original distance between two points, and similar for  $|y_i - y_j|$. Therefore the inequality is stating that after projecting to the subspace of dimension $k$, with high probability that the pariwise distances are scaled by $\sqrt{\frac{k}{d}}$ within factor of 1$\pm \varepsilon$
 
+\section{Projection Method}
+We select a set of $k$ orthogonal unit vectors $$v_1, \cdots, v_k$$ as the basis of the subspace, and project each vector on to them. \\
+\newline
+For a vector $x \in x _ { 1 } , \ldots , x _ { n }$, we look at its coordinate vector $y _ { 1 } , \ldots , x _ { k }$ in the projection onto the subspace, where $y_i = x \cdot v_i$\\
+\newline
+Now, consider a rotation $U$ that transform $v_i$ to $e_i$ (elementary vector where the $i$-th entry is 1 and all others are 0). Let $z = Ux$, therefore we have $y_i$ be the $i$-th coordinate of $z$ (we basically transform the coordinate vector to the standard basis).
+
+\section{"Expected Length"}
+Notice that $z$ is still a unit vector, therefore:
+$$
+\sum _ { i \in [ d ] } z _ { i } ^ { 2 } = 1 .
+$$
+After the projection, we only take the first $k$ coordinates:
+$$
+E \left[ \sum _ { i \in [ k ] } z _ { i } ^ { 2 } \right] = \frac { k } { d } . \text { Linearity of Expectation. }
+$$
+(Terefore the length is roughly expected to be $\sqrt{\frac{k}{d}}$, but it's not yet rigorously proven yet).
+
+
+%However, since we can rotate these $k$ vectors to $e_1, \cdots, e_k$ without changing the relative distances, we can do that for the projections as well.\\
+%\newline
+
+%Suppose that rotate from $v_i$ to $e_i$ is $U$, 
+
 
 
 \end{document}

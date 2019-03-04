@@ -58,6 +58,9 @@
  
 \title{Spectral Graph Theory}
 \author{Zhiwei Zhang}
+
+ 
+\maketitle
 \section{Introduction}
 \subsection{Adjacency Matrix Representation of A Graph}
 We represent a Graph $G$ with a square adjacency matrix $A$, where entry $$a_{ij} = \begin{cases}
@@ -66,9 +69,12 @@ We represent a Graph $G$ with a square adjacency matrix $A$, where entry $$a_{ij
 \end{cases}$$
 Evidently, the matrix is symmetric, or $a_{ij} = a_{ji}$. Therefore by spectral theorem, we have a orthonormal basis of eigenvectors, with real eigenvalues associated.
 
- 
-\maketitle
-
+\section{Counting Paths with Adjacency Matrix}
+\begin{theorem}
+	Let $G$ be a graph on labeled vertices, let $A$ be its adjacency
+	matrix, and let $k$ be a positive integer. Then $A_{i,j}^{k}$ is equal to the number of
+	walks from $i$ to $j$ that are of length $k$ .
+\end{theorem} 
 \end{document}
 
 

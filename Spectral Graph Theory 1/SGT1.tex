@@ -177,6 +177,17 @@ $$A_{i, k} = \begin{cases}
 	to a spanning tree of $A ,$ and $( \operatorname { det } B ) ^ { 2 } = 0$ otherwise. Therefore, the proof
 	follows.
 \end{proof}
+
+\begin{theorem}
+	Let $U$ be a simple undirected graph. Let $\left\{ v _ { 1 } , v _ { 2 } , \cdots , v _ { n } \right\}$ denote the vertices of $U$. Define the $( n - 1 ) \times ( n - 1 )$ matrix $L _ { 0 }$ by
+	\[l_{i, j} = 
+	\begin{cases} 
+	\text{degree of } v _ { i } & i = j \\
+	l _ { i , j } = - 1 & i \neq j \text{ and } (v_{ i },v _ { j }) \in E\\
+	0 & \text{otherwise}
+	\end{cases}\]
+	Then the theorem states det $L_0$ counts the number of spanning trees in $U$
+\end{theorem}
 \end{document}
 
 

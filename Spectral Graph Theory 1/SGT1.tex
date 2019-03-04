@@ -75,6 +75,27 @@ Evidently, the matrix is symmetric, or $a_{ij} = a_{ji}$. Therefore by spectral 
 	matrix, and let $k$ be a positive integer. Then $A_{i,j}^{k}$ is equal to the number of
 	walks from $i$ to $j$ that are of length $k$ .
 \end{theorem} 
+
+\begin{proof}
+	The proof is fairly simple, and we will do it by induction.\\
+	\newline
+	When $k = 1$, we look at the original adjacency matrix, and $A_{i, j}$ indicates whether there's an edge between $i, j$, which is a path of length 1.\\
+	\newline
+	Now assume that the statement is true for $k$, and
+	prove it for $k + 1$. \\
+	\newline
+	\textbf{Let's first think about it intuitively, $A^{k}$ gives the number of paths walks from $i$ to all other points. 
+		If one such point is $v$, then we just need to determine if there's and edge from $v$ to $j$, 
+		if so then we just add the number of walks from $i$ to  $k$.}\\
+	\newline
+	Let $z$ be any vertex of $G$. If there are $b_{i,z}$ walks of length $k$ from $i$ to $z$, and there are $a_{z,j}$ walks of length one (in other words, edges)
+	from $z$ to $j$, then there are $b_{i,z}a_{z,j}$ walks of length $k + 1$ from $i$ to $j$ whose
+	next-to-last vertex is $z$. Therefore, the number of all walks of length $k + 1$ from $i$ to $j$ is:
+	$$
+	c(i,j) = \sum_{z \in G} b_{i,z}a_{z,j}
+	$$
+	Since $b_{i, z}$ correspond to an entry in $A^k$, the formula above is basically a matrix multiplication. 
+\end{proof}
 \end{document}
 
 

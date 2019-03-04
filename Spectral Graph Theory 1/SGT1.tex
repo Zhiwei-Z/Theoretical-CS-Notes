@@ -144,6 +144,39 @@ $$A_{i, k} = \begin{cases}
 	the incidency matrix of $G .$ Remove any row from $A ,$ and let $A _ { 0 }$ be the
 	remaining matrix. Then the number of spanning trees of $G$ is det $A _ { 0 } A _ { 0 } ^ { T }$
 \end{theorem}
+
+\begin{proof}
+	Let us assume, without loss of generality, that the last row of $A$
+	was omitted. Let $B$ be an $( n - 1 ) \times ( n - 1 )$ submatrix of $A _ { 0 } .$ (If $m < n - 1 )$ ,
+	then $G$ cannot be connected, and it has no spanning trees.) We claim that
+	$| \operatorname { det } B | = 1$ if and only if the subgraph $G ^ { \prime }$ corresponding to the columns of
+	$B$ is a spanning tree (including the last row), and det $B = 0$ otherwise.\\
+	\newline 
+	First we need to notice that $G'$ is basically a subgraph with all the vertices but only $n - 1$ edges.\\
+	\newline 
+	We induct on $n .$ First, let us assume that there
+	is a vertex $v _ { i } ( i \neq n )$ of degree one in $G ^ { \prime } .$ (The degree of a vertex in an
+	undirected graph is the number of all edges adjacent to that vertex.) Then
+	the $i$ th row of $B$ contains exactly one nonzero element, and that element is 1 or $- 1 .$ Expanding det $B$ by this row, and using the induction hypothesis,
+	the claim follows. Indeed, $G ^ { \prime }$ is a spanning tree of $G$ if and only if $G ^ { \prime } - v _ { i }$
+	is a spanning tree of $G - v _ { i } .$\\
+	\newline
+	If $G^{\prime}$ has no vertices of degree one (except possibly $v_{n}$,
+	the vertex associated to the deleted last row $) .$ Then $G ^ { \prime }$ is not a spanning tree (cus no leaf). \\
+	\newline
+	Since $G ^ { \prime }$ has $n - 1$ edges, and is not a spanning tree, there
+	must be a vertex in $G ^ { \prime }$ that has degree zero. If this vertex is not $v _ { n } ,$ then $B$
+	has a zero row, and det $B = 0 .$ If this vertex is $v _ { n } ,$ then each column of $B$ contains one $1 ,$ and one $- 1$ as each edge has a head and a tail. Therefore,
+	the sum of all rows of $B$ is $0 ,$ so the rows of $B$ are linearly dependent, and
+	$\operatorname { det } B = 0$\\
+	\newline 
+	The Binet-Cauchy formula, that can be found in most Linear Algebra
+	textbooks, says that
+	\[ \operatorname { det } A _ { 0 } A _ { 0 } ^ { T } = \sum ( \operatorname { det } B ) ^ { 2 }\] where the sum ranges over all $( n - 1 ) \times ( n - 1 )$ submatrices $B$ of $A _ { 0 }$ .
+	However, we have just seen that $( \operatorname { det } B ) ^ { 2 } = 1$ if and only if $B$ corresponds
+	to a spanning tree of $A ,$ and $( \operatorname { det } B ) ^ { 2 } = 0$ otherwise. Therefore, the proof
+	follows.
+\end{proof}
 \end{document}
 
 

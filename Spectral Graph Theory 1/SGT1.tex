@@ -108,6 +108,21 @@ We'll leave it as a quick thought exercise.
 	adjacency matrix of $G .$ Then $G$ is connected iff $( I + A ) ^ { n - 1 }$
 	consists of strictly positive entries.
 \end{theorem}
+\begin{proof}
+	We will only give the central idea of the proof here\\
+	\newline
+	A path from one point to another consists at most $n$ vertices, or $n-1$ edges. Therefore, if we cannot find a path between two points within $n-1$ edges, the graph is not connected\\
+	\newline
+	Using the previous theorem, we know that $A_{n-1}$ gives the number of paths if length $n-1$ between any two points, however, this is \textbf{not enough}.\\
+	\newline
+	Notice that the theorem indicates it's $(I + A)^{n-1}$ instead of $A^{n-1}$. So what does the $I$ do?\\
+	\newline
+	Graphically, it means that we assume any vertex is connected to itself. What is $(I + A)^{n-1}$ then? \\
+	\newline
+	For simplicity, call $(I + A) = A'$. With $A'_{i, i} = 1$, $A'^{k}$ no longer counts the number of paths of length \textbf{strictly} $k$, but the number of paths of length $\leq k$. This is because we don't have to move to another point every time we multiply $A'$, we can choose to stay at the same point since $A'_{i, i} = 1$.\\
+	\newline
+	Therefore $(I + A)^{n-1}$ counts the number of paths of length $\leq n - 1$, and if there still exist an 0 entry $A'^{n-1}_{i, j}$, then it means if we cannot find a path between two points within $n-1$ edges, the graph is not connected.
+\end{proof}
 \end{document}
 
 

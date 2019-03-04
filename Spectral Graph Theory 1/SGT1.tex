@@ -188,6 +188,19 @@ $$A_{i, k} = \begin{cases}
 	\end{cases}\]
 	Then the theorem states det $L_0$ counts the number of spanning trees in $U$
 \end{theorem}
+
+\begin{proof}
+	We turn U into a directed graph with each edge replaced with a \textbf{pair} or directed opposited edges.
+	\newline 
+	Let $A _ { 0 }$ be the incidency matrix of $G - v_n$. We claim that $A _ { 0 } A _ { 0 } ^ { T } = 2 L _ { 0 } .$ The
+	entry of $A _ { 0 } A _ { 0 } ^ { T }$ in position $( i , j )$ is the scalar product of the ith and $j$ th row of $A _ { 0 } .$ If $i = j ,$ then every edge that starts or ends at $v _ { i }$ contributes 1 to
+	this inner product. Therefore, the entry of $A _ { 0 } A _ { 0 } ^ { T }$ in position $( i , i )$ is the
+	degree of $v _ { i }$ in $G ,$ or, in other words, twice the degree of $v _ { i }$ in $U$\\
+	\newline
+	If $i = j$, then we see that every edge between $i$ and $j$ in $U$ will contribute $-2$ to $A_0{A_0}^T$, but the corresponding entry in $L_0$ is $-1$. Therefore all entries in $L_0$ is half of  $A_0{A_0}^T$. \\
+	\newline
+	Therefore $2 ^ { n - 1 } \operatorname { det } L _ { 0 } = \operatorname { det } \left( A _ { 0 } A _ { 0 } ^ { T } \right)$. However, for each spanning tree in $G$, each of its edge can choose 2 directions in $U$, so it corresponds to $2^{n-1}$ spanning trees in $U$. And also since $A_0{A_0}^T$ counts the number of spanning trees in $U$, we then have det$L_0$ counts the number of spanning trees in $G$.
+\end{proof}
 \end{document}
 
 

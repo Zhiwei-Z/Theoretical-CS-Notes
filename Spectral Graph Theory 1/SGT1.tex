@@ -123,6 +123,21 @@ We'll leave it as a quick thought exercise.
 	\newline
 	Therefore $(I + A)^{n-1}$ counts the number of paths of length $\leq n - 1$, and if there still exist an 0 entry $A'^{n-1}_{i, j}$, then it means if we cannot find a path between two points within $n-1$ edges, the graph is not connected.
 \end{proof}
+
+\textbf{Some Remarks}: Bellman-Ford algorithm also uses the property that a path between two vertices in a connected graph has edge count at most $n-1$ to check for negative cycles.
+
+
+\section{Matrix Tree Theorem (Many Versions)}
+It turns out that we can use matrix to count the number of spanning trees with matrices. There are many matrix tree theorems, and we here will just talk about a few of them.\\
+
+\subsection{Incidency Matrix}We first define the incidency matrix $A$ for a graph $G$\\
+\newline
+The incidency matrix of $G(V, E)$ is a  $n \times m$ matrix, where $n = |V|, m = |E|$. We label the edges $e_1, \cdots, e_m$ and vertices $v_1, \cdots, v_n$. Then
+$$A_{i, k} = \begin{cases}
+1 \text{ if }i \text{ is the head of the edge of } e_k\\
+-1 \text{ if }i \text{ is the tail of the edge of } e_k\\
+0 \text{ otherwise}
+\end{cases}$$
 \end{document}
 
 

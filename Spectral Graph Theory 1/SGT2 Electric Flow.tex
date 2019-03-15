@@ -78,9 +78,18 @@ We will write a matrix formation of the problem.\\
 \begin{itemize}
 	\item Let $G(V, E)$ be an undirected graph with $|V| = n, |E| = m$.
 	\item Let $v \in \mathbb{R}^n$ be the vector representing the potentials of vertices.
-	\item Edges represent the resistors, and $\forall e(u, v) \in E$, we restrict the representation $(u, v)$ that $u < v$.
-	\item Let $f \in \mathbb{R}^m$ representing the flow of all edges, where $f(a, b)$ represents the flow from $a$ to $b$ with $a < b$. Since $f(a, b)$ is directed, we have $f(a, b) = -f(b, a)$
+	\item Edges represent the resistors, and $\forall e(u, v) \in E$. Edge $e$ has resistance $r_e$.
+	\item Let $f \in \mathbb{R}^m$ representing the flow of all edges, where $f(a, b)$ represents the flow from $a$ to $b$ with. Since $f(a, b)$ is directed, we have $f(a, b) = -f(b, a)$.
+	\item Let weight $w_e= \frac{1}{r_e}$, or the "conductance" of $e$.
 \end{itemize}
+
+\section{Matrix Formation}
+We also define $ f _ { e x t } ( a ) = \sum _ { b = ( a , b ) \in E } f ( a , b )$, and $f_{ex}t(a)$ basically denotes the external current on $a$, which is \textbf{positive number if $a$ is souce, negative number with equal magnitude if $a$ is source, and zero otherwise}. So $f_{ext}$ is a very sparse vector.\\
+\newline
+Ohm's law directly states that $f ( a , b ) = \frac { v ( a ) - v ( b ) } { r _ { a , b } } = w _ { a , b } ( v ( a ) - v ( b ) )$, therefore $$\sum _ { b : ( a , b ) \in E } f ( a , b ) = \sum _ { b : ( a , b ) \in E } w _ { a , b } ( v ( a ) - v ( b ) ) = d ( a ) v ( a ) - \sum _ { b : ( a , b ) \in E } w _ { a, b  } v ( b )$$ where $d(a) = \sum_{b : ( a , b ) \in E }w_{a, b}$, the weighted degree of $a$.\\
+\newline
+Notice that $d(a), w_{a, b}$ are entries of the weighted laplacian $L_G$, and through simple verification, we can show that the equation above the equivalent to $L_Gv = f_{ext}$
+
 
 \end{document}
 

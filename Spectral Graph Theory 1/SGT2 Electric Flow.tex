@@ -74,6 +74,13 @@ First recall some E\&M Laws:
 Note that the last law only holds for nodes that are not source or sink.
 
 \subsection{Formation on Graph}
+We will write a matrix formation of the problem.\\
+\begin{itemize}
+	\item Let $G(V, E)$ be an undirected graph with $|V| = n, |E| = m$.
+	\item Let $v \in \mathbb{R}^n$ be the vector representing the potentials of vertices.
+	\item Edges represent the resistors, and $\forall e(u, v) \in E$, we restrict the representation $(u, v)$ that $u < v$.
+	\item Let $f \in \mathbb{R}^m$ representing the flow of all edges, where $f(a, b)$ represents the flow from $a$ to $b$ with $a < b$. Since $f(a, b)$ is directed, we have $f(a, b) = -f(b, a)$
+\end{itemize}
 
 \end{document}
 

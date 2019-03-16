@@ -1,6 +1,6 @@
 # Theoretical-CS-Notes
-Notes for theoretical CS topics 
-Topics included:
+Notes for theoretical CS topics <br/>
+Topics included: <br/>
 • Spectral Graph Theory <br/>
 • Dimension argument <br/>
 • Probabilitic method <br/>

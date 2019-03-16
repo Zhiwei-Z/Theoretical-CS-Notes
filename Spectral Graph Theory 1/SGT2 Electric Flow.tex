@@ -109,6 +109,16 @@ Therefore $v = L_{G}^+ f_{ext}$ is the only solution with $v \perp \vec{1}$, and
 \newline
 This also makes sense in the physical way, as if we increase the potential of all nodes, the physical flow or energy will not change as electrical potentials are only significant when taking differences.
 
+\section{Computing Currents}
+First we reintroduce the incidence matrix $B$ of dimension $m \times n$, and the row corresponding to the edge $e = (a, b)$ where $a < b$ is $(x_a - x_b)^T$, where $x_a$ is the characteristic with the only non-zero entry at $a-th$ entry of value 1.\\
+\newline
+Let $w$ be the mxm diagonal matrix where $W_{e, e} = w_e$ is the weight of edge $e$.\\
+\newline
+Notice that $Bv$ gives the potential difference on each edge, and therefore $f = WBv$.\\
+\newline
+It's also true that $L _ { G } = \sum _ { e : ( a , b ) } w _ { e } \left( x _ { a } - x _ { b } \right) \left( x _ { a } - x _ { b } \right) ^ { T } = B ^ { T } W B$. \\
+\newline Therefore $f _ { e x t } = L _ { G } v = B ^ { T } W B v = B ^ { T } f$
+
 \end{document}
 
 

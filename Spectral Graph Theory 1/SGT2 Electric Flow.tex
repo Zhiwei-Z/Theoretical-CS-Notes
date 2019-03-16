@@ -102,6 +102,12 @@ Ohm's law directly states that $f ( a , b ) = \frac { v ( a ) - v ( b ) } { r _ 
 \newline
 Notice that $d(a), w_{a, b}$ are entries of the weighted laplacian $L_G$, and through simple verification, we can show that the equation above the equivalent to $L_Gv = f_{ext}$
 
+\section{Computing Voltages}
+Since we know that $Nul(L_G) = \vec{1}$, it's trivial to see that for any vector $x$, $L_G x$ is perpendicular to $\vec{1}$, which implies there's a solution to $L_Gv = f_{ext}$ iff $f_{ext}$ is perpendicular to 1. This is also simply true since the two non-zero entries of $f_{ext}$ have the same magnitude with opposite sign.\\
+\newline
+Therefore $v = L_{G}^+ f_{ext}$ is the only solution with $v \perp \vec{1}$, and the whole set of solution is $\{v + c\vec{1} | c\in \mathbb{R}\}$ \\
+\newline
+This also makes sense in the physical way, as if we increase the potential of all nodes, the physical flow or energy will not change as electrical potentials are only significant when taking differences.
 
 \end{document}
 

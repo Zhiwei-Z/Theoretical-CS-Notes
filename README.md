@@ -1,7 +1,7 @@
 # Theoretical-CS-Notes
 Notes for theoretical CS topics 
 Topics included:
-• Spectral Graph Theory
+• Spectral Graph Theory <br/>
 • Dimension argument
 • Probabilitic method
 • Johnson Lindenstrauss

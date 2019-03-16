@@ -73,6 +73,18 @@ First recall some E\&M Laws:
 \end{align*}
 Note that the last law only holds for nodes that are not source or sink.
 
+\subsection{Matrices}
+Also recall the laplacian of a graph:
+$$L _ { i , j } : = \left\{ \begin{array} { l l } { \operatorname { deg } \left( v _ { i } \right) } & { \text { if } i = j } \\ { - 1 } & { \text { if } i \neq j \text { and } v _ { i } \text { is adjacent to } v _ { j } } \\ { 0 } & { \text { otherwise } } \end{array} \right.$$
+Weighted laplacian of a graph:
+$$
+L _ { i j } = \left\{ \begin{array} { l l } { - w _ { i j } } & { \text { if } i \sim j } \\ { w _ { i } } & { \text { if } i = j } \\ { 0 } & { \text { otherwise } } \end{array} \right.
+$$
+where $w _ { i } = \sum _ { j \sim i } w _ { i j }$ is the sum of the weights of edges incident on vertex $i$.\\
+\newline
+Pseudoinverse of laplacian:
+Let $0 = \lambda _ { 1 } < \lambda _ { 2 } \leqslant \ldots \leq \lambda _ { n }$ be the eigenvalues of  $L_G$ with associated eigenvectors $u _ { 1 } , u _ { 2 } , \ldots , u _ { n }$. Then $$L _ { G } = \sum _ { i = 1 } ^ { n } \lambda _ { i } u _ { i } u _ { i } ^ { T }$$. The pseudo-inverse of $L_G$ is $$L _ { G } ^ { + } = \sum _ { i = 2 } ^ { n } \frac { 1 } { \lambda _ { i } } u _ { i } n _ { i } ^ { T }$$.
+
 \subsection{Formation on Graph}
 We will write a matrix formation of the problem.\\
 \begin{itemize}

@@ -119,8 +119,48 @@ Notice that $Bv$ gives the potential difference on each edge, and therefore $f =
 It's also true that $L _ { G } = \sum _ { e : ( a , b ) } w _ { e } \left( x _ { a } - x _ { b } \right) \left( x _ { a } - x _ { b } \right) ^ { T } = B ^ { T } W B$. \\
 \newline Therefore $f _ { e x t } = L _ { G } v = B ^ { T } W B v = B ^ { T } f$
 
+\newpage
 
 \section{Random Walk and Effective Resistance}
+Random walk is largely studied on graphs, and it turns out that the concept of effective resistance is very useful in this area. Before we get into the theorems, we need to specify some restrictions on the graph we are using and define some terms.
+\subsection{Specification and Definitions}
+When modeling random walks with electric flows, we general set the resistance of each edge to be 1, and $\forall e \in E, w_e = w/r_e = 1$. \\
+\newline
+In addition:
+\begin{itemize}
+	\item We define hitting time $h_{uv} := $ expected number of steps to reach $v$ from $u$
+	\item We define commutime $C_{u, v} := $ expected number of steps to start from $u$, travelling to $v$, and come back to $u$. More specifically, $C_{u, v} = h_{u, v} + h_{v, u} = C_{v, u}$. Notice that $h_{u, v}$ not necessarily = $ h_{v, u}$.
+\end{itemize}
+
+\subsection{Theorems and Corollaries}
+\begin{theorem}{1}
+	$C_{s, t} = 2mR_{eff}(s, t)$
+\end{theorem}
+\begin{proof}
+	First using recursive definition, we can develop the equation: $$\forall v \in V - t, h_{vt} = \sum_{w : vw \in E}\frac{1}{d(v)}(1 + h_{wt}).$$
+	Notice that this only holds for all vertices except $t$, which is very important since $h_{tt} = 0$, and there'd also be no reason to walk away from $t$ and walk back. We will reemphasize this point later again.\\
+	\newline
+	The equation is equivalent to $$d(v) = d(v)h_{vt} - \sum_{w : vw \in E}h_{wt} = \sum _ {  w : vw \in E} \left( h _ { v t } - h _ { w t } \right)$$
+	Notice that this form is similar to the Laplacian system of linear equations (reacall $\sum _ { b : ( a , b ) \in E } f ( a , b ) = \sum _ { b : ( a , b ) \in E } w _ { a , b } ( v ( a ) - v ( b ) ) = d ( a ) v ( a ) - \sum _ { b : ( a , b ) \in E } w _ { a , b } v ( b )$)\\
+	\newline
+	Next, we denote $\phi_{vt}$ be the potential at $v$ with $\phi_{tt = 0}$. Now if for all $v \in V - t$, we inject $d(v)$ units of current (so $|V| - 1$ sources). Totally we inject $2m - d(t)$ units of current, and we have to remove the same amount from $t$. \\
+	\newline
+	Since $\forall v \in V - t$, $d(v)$ units of current are injected, its external current is therefore $d(v)$, which dissipates through its neighbors. Therefore $$d(v) = \sum_{w : vw\in E}(\phi_{vt} - \phi_{wt})/r_{(v, w)} = \sum_{w : vw\in E}(\phi_{vt} - \phi_{wt}).$$ Let $f_{t}$ be the external flow vector if $t$ is the only sink. In this situation, $\forall v \in V-t, f_{t}(v) = d(v, f_{t}(t) = d(t) - 2m)$\\
+	\newline
+	Therefore we get $\forall v \in V-t, d(v) = \sum_{w : vw\in E}(\phi_{vt} - \phi_{wt}) = \sum _ {  w : vw \in E} \left( h _ { v t } - h _ { w t } \right)$, so $\vec{\phi_t}$ and $\vec{h_t}$ satisfy the same equation: $L_{G}x  = f_{t}$. Since we have a set of possible solutions, but also since $h_{tt} = \phi_{tt} = 0$, $\vec{h_t} = \vec{\phi_t}$ at all points. We now reamphasize the importance of $d(v) = \sum _ {  w : vw \in E} \left( h _ { v t } - h _ { w t } \right)$ only satisfies for $v \in V - t$: we can see that if we extend this definition to $t$, they will not satisfy the laplacian equation.\\
+	\newline
+	Now, we define $f_s$ similar to $f_t$ (now $s$ is the only sink, all other vertices are sources).\\
+	\newline
+	Therefore we have $L _ { G } \left( \vec { h } _ { t } - h _ { S } \right) = f _ { t } - f _ { S } = 2 m \left( x _ { s } - x _ { t } \right)$, and so $\left( \vec { h _ { t } } - \vec { h } _ { s } \right) / 2 m = L _ { G } ^ { \dagger } \left( x _ { s } - x _ { t } \right)$. 
+	\begin{align*}
+	R _ { e f f } ( s , t ) &=( x _ { s } - x _ { t })^T L{G}^{+}( x _ { s } - x _ { t }) \\
+							&= \left( x _ { s } - x _ { t } \right) ^ { T } \left( \frac { 1 } { 2 m } \left( \vec { h } _ { t } - \vec { h } _ { s } \right) \right) \\
+							&= \frac { 1 } { 2 m } \left( h _ { t } ( s ) + \vec { h } _ { s } ( t ) \right) \\
+							&= \frac { 1 } { 2 m } \left( h _ { s t } + h _ { t s } \right)\\
+							&= \frac { 1 } { 2 m } C_{s, t}
+	\end{align*}
+\end{proof}
+
 \end{document}
 
 

@@ -161,6 +161,31 @@ In addition:
 	\end{align*}
 \end{proof}
 
+\begin{theorem}{2}
+	The cover time of an undirected graph is at most $2m(n - 1)$.
+\end{theorem}
+\begin{proof}
+	Let $T$ be a spanning tree of $G$.\\
+	\newline
+	Consider this tree traversal that cover all vertices: follow DFS. Basically if we encounter branching, we will choose one branch and go deeper and return back and go through the next branch, which cover all the vertices (each edge is visited twice).\\
+	\newline
+	Therefore the cover time of $G$ is bounded by the expected length of the walk, which is at most $\sum_{uv \in T}(h_{uv} + h_{vu}) = \sum_{uv \in T}C_{uv} \leq 2m(n-1)$ since the effective resistance between two vertices is at most 1.
+\end{proof}
+
+The theorem gives an upper bound of $2m(n - 1) \leq (n)(n - 1)^2 < n^3$, but we can get tighter bounds.
+
+\begin{theorem}{3}
+	Let $R ( G ) = \max _ { u , v } R _ { e f f } ( u , v ) \quad$ Then $\quad m R ( G ) \leqslant$ cover tine $\leqslant 2 e ^ { 3 } m R ( n ) \log n + n$
+\end{theorem}
+\begin{proof}
+	\begin{enumerate}
+		\item The lower bound is easy to derive: Let $R ( G ) = R _ { e f f } ( u , v ) \cdot$ Then $2 m R _ { e f f } ( u , \omega ) = C _ { u v } = h _ { u v } + h _ { v n }$, so the cover time is at least $\max \left\{ h _ { u v } , h _ { v u } \right\} \geq C _ { n v } / 2 = m R _ { e f f } ( u , v )$
+		\item To compute the upper bound, we first observe that the hitting time between any pair of vertices is $2mR(G)$ (the max commute time). Therefore the probability of  after $2me^3R(G)\ln{n}$ steps and some vertex is still not hit is at most $\frac{1}{e^3 \cdot \ln{n}}$ by Markov inequality. We can also observe that $\frac{1}{e^3 \cdot \ln{n}} \leq 1/n^3$ when $n \geq 3$.\\
+		\newline
+		Therefore by union bound, the probability of some vertex is not hit is at most $\frac{1}{n^2}$. In this situation, we will use the "bad" bound of $n^3$. Therefore the cover time is at most $2 e ^ { 3 } m R ( G ) \ln n + \left( \frac { 1 } { n ^ { 2 } } \right) n ^ { 3 } = 2 e ^ { 3 } m R ( 4 ) \ln n + n$.
+	\end{enumerate}
+\end{proof}
+
 \end{document}
 
 

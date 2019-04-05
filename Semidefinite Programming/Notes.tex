@@ -22,6 +22,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
 
 \newenvironment{solution}[2][Solution]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
@@ -39,8 +40,6 @@
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{proposition}[2][Proposition]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{definition}[2][Definition]{\begin{trivlist}
-		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 
 
 \newenvironment{example}[2][Example]{\begin{trivlist}
@@ -57,37 +56,26 @@
  
 %\renewcommand{\qedsymbol}{\filledbox}
  
-\title{Real Analysis Theorems}
+\title{Semidefinite Programming}
 \author{Zhiwei Zhang}
  
 \maketitle
-\section{Limsup and Liminf}
-\begin{corollary}
-	If $\lim \left| \frac { s _ { n + 1 } } { s _ { n } } \right|$ exists $[$ and equals $L ] ,$ then $\lim \left| s _ { n } \right| ^ { 1 / n } $ exists $[$ and
-	equals $L ] .$
-\end{corollary}
-\section{Power Series}
-Given power series $\sum _ { n = 0 } ^ { \infty } a _ { n } x ^ { n }$
+\section{Semidefinite Programming}
+\begin{definition}
+	A symmetric $n \times n$ matrix $A$ is PSD if $x^TAx \geq 0 \forall x$
+\end{definition}
 \begin{theorem}
-Given any $(a_n)$, one of the following holds true:
+The following are equivalent:
 \begin{enumerate}
-	\item The power series converges for all $x \in \mathbb{R}$
-	\item The power series converges only for $x = 0$
-	\item The power series converges for all $x$ in some bounded interval centered at $0 ;$ the intervalmay be open, half-open or closed.
+	\item $x^TAx \geq 0 \forall x$
+	\item $A = \sum_{i = 0}^{n}\lambda_iv_iv_i^T$, where $\lambda_i \in \mathbb{R}$ and $v_i$ are orthonormal.
+	\item $A = B^TB$ for some $B$
 \end{enumerate}
-\end{theorem}
-
-\begin{theorem}
-	Let $$
-	\beta = \limsup \left| a _ { n } \right| ^ { 1 / n } \quad \text { and } \quad R = \frac { 1 } { \beta }
-	$$
-	Then
+\begin{proof}
 	\begin{enumerate}
-		\item The power series converges for  $|x| < R$
-		\item The power series diverges for $|x| > R$
+		\item $1) \implies 2)$: 
 	\end{enumerate}
-	
-	Also notice that $\lim \left| \frac { a _ { n + 1 } } { a _ { n } } \right| = \beta$, therefore most of the time we will use $\lim \left| \frac { a _ { n + 1 } } { a _ { n } } \right|$ as it's easier to compute thatn $\beta$.
+\end{proof}
 \end{theorem}
 
 \end{document}

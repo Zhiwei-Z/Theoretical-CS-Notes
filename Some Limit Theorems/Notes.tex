@@ -110,6 +110,43 @@ Given any $(a_n)$, one of the following holds true:
 	uniformly on $S .$
 \end{theorem}
 
+\begin{theorem}
+	Consider a series $\sum _ { k = 0 } ^ { \infty } g _ { k }$ of functions on a set $S \subseteq \mathbb { R } .$ Suppose
+	each $g _ { k }$ is continuous on $S$ and the series converges uniformly on $S$ .
+	Then the series $\sum _ { k = 0 } ^ { \infty } g _ { k }$ represents a continuous function on $S .$
+\end{theorem}
+\begin{theorem}
+	If a series $\sum _ { k = 0 } ^ { \infty } g _ { k }$ of functions satisfies the Cauchy criterion
+	uniformly on a set $S$ , then the series converges uniformly on $S$ .
+\end{theorem}
+\begin{theorem}
+	Let $\left( M _ { k } \right)$ be a sequence of nonnegative real numbers where $\sum M _ { k } <$
+	$\infty .$ If $\left| g _ { k } ( x ) \right| \leq M _ { k }$ for all $x$ in a set $S ,$ then $\sum g _ { k }$ converges
+	uniformly on $S .$
+\end{theorem}
+\begin{theorem}
+	Show that if the series $\sum g _ { n }$ converges uniformly on a set $S ,$ then
+	$\lim _ { n \rightarrow \infty } \sup \left\{ \left| g _ { n } ( x ) \right| : x \in S \right\} = 0$
+\end{theorem}
+
+\section{Differentiation and Integration of Power Series}
+\begin{theorem}
+	Let $\sum _ { n = 0 } ^ { \infty } a _ { n } x ^ { n }$ be a power series with radius of convergence $R > 0$
+	$[$possibly$R = + \infty ] .$ If $0 < R _ { 1 } < R ,$ then the power series converges
+	uniformly on $\left[ - R _ { 1 } , R _ { 1 } \right]$ to a continuous function.
+\end{theorem}
+\begin{lemma}
+	If the power series $\sum _ { n = 0 } ^ { \infty } a _ { n } x ^ { n }$ has radius of convergence $R ,$ then the
+	power series
+	$$\sum _ { n = 1 } ^ { \infty } n a _ { n } x ^ { n - 1 } \quad$$ and $$\sum _ { n = 0 } ^ { \infty } \frac { a _ { n } } { n + 1 } x ^ { n + 1 }$$ also have radius of convergence $R .$
+\end{lemma}
+
+\begin{theorem}[Abel’s Theorem]
+	Let $f ( x ) = \sum _ { n = 0 } ^ { \infty } a _ { n } x ^ { n }$ be a power series with finite positive radius of
+	convergence$R .$ If the series converges at $x = R ,$ then $f$ is continuous
+	at $x = R .$ If the series converges at $x = - R ,$ then $f$ is continuous
+	at $x = - R .$
+\end{theorem}
 \end{document}
 
 

@@ -68,15 +68,19 @@
 The following are equivalent:
 \begin{enumerate}
 	\item $x^TAx \geq 0 \forall x$
-	\item $A = \sum_{i = 0}^{n}\lambda_iv_iv_i^T$, where $\lambda_i \in \mathbb{R}$ and $v_i$ are orthonormal.
+	\item $A = \sum_{i = 0}^{n}\lambda_iv_iv_i^T$, where $\lambda_i \in \mathbb{R}^{+}$ and $v_i$ are orthonormal.
 	\item $A = B^TB$ for some $B$
 \end{enumerate}
 \begin{proof}
 	\begin{enumerate}
 		\item $1) \implies 2)$: 
+		\item $2) \implies 3)$:
+		\item $3) \implies 1)$:
 	\end{enumerate}
 \end{proof}
 \end{theorem}
+3) implies that if $A$ is SDP, $A_{ij} = <b_i, b_j>$
+SDP: $\min\limits_{X \in \mathbb{R}^{n \times n}} <C, X> = \sum C_{ij}X_{i,j} = Tr(CX)$
 
 \end{document}
 

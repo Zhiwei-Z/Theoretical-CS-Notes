@@ -22,6 +22,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
 
 \newenvironment{solution}[2][Solution]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
@@ -39,8 +40,7 @@
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{proposition}[2][Proposition]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{definition}[2][Definition]{\begin{trivlist}
-		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
 
 
 \newenvironment{example}[2][Example]{\begin{trivlist}
@@ -88,6 +88,26 @@ Given any $(a_n)$, one of the following holds true:
 	\end{enumerate}
 	
 	Also notice that $\lim \left| \frac { a _ { n + 1 } } { a _ { n } } \right| = \beta$, therefore most of the time we will use $\lim \left| \frac { a _ { n + 1 } } { a _ { n } } \right|$ as it's easier to compute thatn $\beta$.
+\end{theorem}
+\section{More on Uniform Convergence}
+\begin{theorem}
+	Let $\left( f _ { n } \right)$ be a sequence of continuous functions on $[ a , b ] ,$ and suppose
+	$f _ { n } \rightarrow f$ uniformly on $[ a , b ] .$ Then
+	$$\lim _ { n \rightarrow \infty } \int _ { a } ^ { b } f _ { n } ( x ) d x = \int _ { a } ^ { b } f ( x ) d x$$
+\end{theorem}
+\begin{definition}
+	A sequence $\left( f _ { n } \right)$ of functions defined on a set $S \subseteq \mathbb { R }$ is uniformly
+	Cauchy on $S$ if
+	\begin{center}
+			$\quad$ for each $\epsilon > 0$ there exists a number $N$ such that\\
+		$\quad \left| f _ { n } ( x ) - f _ { m } ( x ) \right| < \epsilon$ for all $x \in S$ and all $m , n > N$
+	\end{center}
+
+\end{definition}
+\begin{theorem}
+	Let $\left( f _ { n } \right)$ be a sequence of functions defined and uniformly Cauchy on
+	a set $S \subseteq \mathbb { R } .$ Then there exists a function $f$ on $S$ such that $f _ { n } \rightarrow f$
+	uniformly on $S .$
 \end{theorem}
 
 \end{document}

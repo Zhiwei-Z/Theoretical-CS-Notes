@@ -245,6 +245,23 @@ Given any $(a_n)$, one of the following holds true:
 	( 1 + x ) ^ { \alpha } = 1 + \sum _ { k = 1 } ^ { \infty } \frac { \alpha ( \alpha - 1 ) \cdots ( \alpha - k + 1 ) } { k ! } x ^ { k }
 	$$
 \end{theorem}
+
+\begin{theorem}[Newton's Method]
+	Newton's method for finding an approximate solution to $f ( x ) = 0$ is
+	to begin with a reasonable initial guess $x _ { 0 }$ and then compute
+	$$
+	x _ { n } = x _ { n - 1 } - \frac { f \left( x _ { n - 1 } \right) } { f ^ { \prime } \left( x _ { n - 1 } \right) } \quad \text { for } \quad n \geq 1
+	$$
+\end{theorem}
+
+
+\begin{theorem}[Secant Method]
+	A similar approach to approximating solutions of $f ( x ) = 0$ is to start
+	with two reasonable guesses $x _ { 0 }$ and $x _ { 1 }$ and then compute
+	$$
+	x _ { n } = x _ { n - 1 } - \frac { f \left( x _ { n - 1 } \right) \left( x _ { n - 2 } - x _ { n - 1 } \right) } { f \left( x _ { n - 2 } \right) - f \left( x _ { n - 1 } \right) } \quad \text { for } \quad n \geq 2
+	$$
+\end{theorem}
 \end{document}
 
 

@@ -201,6 +201,50 @@ Given any $(a_n)$, one of the following holds true:
 	and satisfies $f ( a ) = f ( b ) .$ There exists [at least one] $x$ in $( a , b )$ such
 	that $f ^ { \prime } ( x ) = 0$
 \end{theorem}
+
+\section{Taylor's Theorem}
+\begin{definition}
+	Taylor's Theorem: $$
+	\sum _ { k = 0 } ^ { \infty } \frac { f ^ { ( k ) } ( c ) } { k ! } ( x - c ) ^ { k }
+	$$
+	Remainder: $$
+	R _ { n } ( x ) = f ( x ) - \sum _ { k = 0 } ^ { n - 1 } \frac { f ^ { ( k ) } ( c ) } { k ! } ( x - c ) ^ { k }
+	$$
+\end{definition}
+\begin{theorem}[Taylor's Theorem]
+	Let $f$ be defined on (a,b) where $a < c < b ;$ here we allow $a = - \infty$
+	or $b = \infty .$ Suppose the nth derivative $f ^ { ( n ) }$ exists on $( a , b ) .$ Then for
+	each $x \neq c$ in $( a , b )$ there is some $y$ between $c$ and $x$ such that $$
+	R _ { n } ( x ) = \frac { f ^ { ( n ) } ( y ) } { n ! } ( x - c ) ^ { n }
+	$$
+\end{theorem}
+\begin{corollary}
+	Let $f$ be defined on $( a , b )$ where $a < c < b .$ If all the derivatives $f ^ { ( n ) }$
+	exist on $( a , b )$ and are bounded by a single constant $C ,$ then
+	$$
+	\lim _ { n \rightarrow \infty } R _ { n } ( x ) = 0 \quad \text { for all } \quad x \in ( a , b )
+	$$
+\end{corollary}
+
+\begin{theorem}[Taylor's Theorem (another one)]
+	Let $f$ be defined on $( a , b )$ where $a < c < b ,$ and suppose the nth
+	derivative $f ^ { ( n ) }$ exists and is continuous on $( a , b ) .$ Then for $x \in ( a , b )$ we have $$
+	R _ { n } ( x ) = \int _ { c } ^ { x } \frac { ( x - t ) ^ { n - 1 } } { ( n - 1 ) ! } f ^ { ( n ) } ( t ) d t
+	$$
+\end{theorem}
+
+\begin{corollary}
+	If $f$ is as in Theorem 31.5, then for each $x$ in $( a , b )$ different from $c$
+	there is some $y$ between $c$ and $x$ such that $$
+	R _ { n } ( x ) = ( x - c ) \cdot \frac { ( x - y ) ^ { n - 1 } } { ( n - 1 ) ! } f ^ { ( n ) } ( y )
+	$$ This form of $R _ { n }$ is known as Cauchy's form of the remainder.
+\end{corollary}
+
+\begin{theorem}[Binomial Series Theorem]
+	If $\alpha \in \mathbb { R }$ and $| x | < 1 ,$ then $$
+	( 1 + x ) ^ { \alpha } = 1 + \sum _ { k = 1 } ^ { \infty } \frac { \alpha ( \alpha - 1 ) \cdots ( \alpha - k + 1 ) } { k ! } x ^ { k }
+	$$
+\end{theorem}
 \end{document}
 
 

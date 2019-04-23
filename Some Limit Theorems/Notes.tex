@@ -276,6 +276,56 @@ Given any $(a_n)$, one of the following holds true:
 	L ( f , P ) = \sum _ { k = 1 } ^ { n } m \left( f , \left[ t _ { k - 1 } , t _ { k } \right] \right) \cdot \left( t _ { k } - t _ { k - 1 } \right)
 	$$
 \end{definition}
+
+\begin{lemma}
+	Let $f$ be a bounded function on $[ a , b ] .$ If $P$ and $Q$ are partitions of
+	$[ a , b ]$ and $P \subseteq Q ,$ then $$
+	L ( f , P ) \leq L ( f , Q ) \leq U ( f , Q ) \leq U ( f , P )
+	$$.
+\end{lemma}
+\begin{lemma}
+	If $f$ is a bounded function on $[ a , b ] ,$ and if $P$ and $Q$ are partitions of
+	$[ a , b ] ,$ then $L ( f , P ) \leq U ( f , Q )$
+\end{lemma}
+\begin{theorem}
+	A bounded function $f$ on $[ a , b ]$ is integrable if and only if for each
+	$\epsilon > 0$ there exists a partition $P$ of $[ a , b ]$ such that $$
+	U ( f , P ) - L ( f , P ) < \epsilon
+	$$
+\end{theorem}
+\begin{definition}
+	The mesh of a partition $P$ is the maximum length of the subintervals
+	comprising $P .$ Thus if $$
+	P = \left\{ a = t _ { 0 } < t _ { 1 } < \cdots < t _ { n } = b \right\}
+	$$ then $$
+	\operatorname { mesh } ( P ) = \max \left\{ t _ { k } - t _ { k - 1 } : k = 1,2 , \ldots , n \right\}
+	$$
+\end{definition}
+\begin{theorem}
+	$A$ bounded function $f$ on $[ a , b ]$ is integrable if and only if for each
+	$\epsilon > 0$ there exists $a \delta > 0$ such that $$
+	\operatorname { mesh } ( P ) < \delta \quad \text { implies } \quad U ( f , P ) - L ( f , P ) < \epsilon
+	$$ for all partitions $P$ of $[ a , b ]$.
+\end{theorem}
+
+\begin{definition}
+	The function $f$ is Riemann integrable on $[ a , b ]$ if there exists a
+	number $r$ with the following property. For each $\epsilon > 0$ there exists
+	$\delta > 0$ such that $$
+	| S - r | < \epsilon
+	$$ for every Riemann sum $S$ of $f$ associated with a partition $P$ having
+	$\operatorname { mesh } ( P ) < \delta .$ 
+\end{definition}
+\begin{theorem}
+	A bounded function $f$ on $[ a , b ]$ is Riemann integrable if and only if
+	it is $[$ Darboux] integrable, in which case the values of the integrals
+	agree.
+\end{theorem}
+\begin{corollary}
+	Let $f$ be a bounded Riemann integrable function on [a,b]. Suppose
+	$\left( S _ { n } \right)$ is a sequence of Riemann sums, with corresponding partitions $P _ { n } ,$ satisfying lim $_ { n } \operatorname { mesh } \left( P _ { n } \right) = 0 .$ Then the sequence $\left( S _ { n } \right)$ converges
+	to $\int _ { a } ^ { b } f .$
+\end{corollary}
 \end{document}
 
 

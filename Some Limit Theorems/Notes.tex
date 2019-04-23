@@ -262,6 +262,20 @@ Given any $(a_n)$, one of the following holds true:
 	x _ { n } = x _ { n - 1 } - \frac { f \left( x _ { n - 1 } \right) \left( x _ { n - 2 } - x _ { n - 1 } \right) } { f \left( x _ { n - 2 } \right) - f \left( x _ { n - 1 } \right) } \quad \text { for } \quad n \geq 2
 	$$
 \end{theorem}
+\section{The Riemann Integral}
+\begin{definition}
+	$$
+	M ( f , S ) = \sup \{ f ( x ) : x \in S \} \quad \text { and } \quad m ( f , S ) = \inf \{ f ( x ) : x \in S \}
+	$$
+	A partition of $[ a , b ]$ is any finite ordered subset $P$ having the form $$
+	P = \left\{ a = t _ { 0 } < t _ { 1 } < \cdots < t _ { n } = b \right\}
+	$$
+	The upper Darboux sum $U ( f , P )$ of $f$ with respect to $P$ is the sum $$
+	U ( f , P ) = \sum _ { k = 1 } ^ { n } M \left( f , \left[ t _ { k - 1 } , t _ { k } \right] \right) \cdot \left( t _ { k } - t _ { k - 1 } \right)
+	$$ and the lower Darboux sum $L ( f , P )$ is $$
+	L ( f , P ) = \sum _ { k = 1 } ^ { n } m \left( f , \left[ t _ { k - 1 } , t _ { k } \right] \right) \cdot \left( t _ { k } - t _ { k - 1 } \right)
+	$$
+\end{definition}
 \end{document}
 
 

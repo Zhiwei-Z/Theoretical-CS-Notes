@@ -130,10 +130,31 @@
 	to $S $ (which means $S$ is \textbf{closed}).
 \end{theorem}
 \section{Limsup and Liminf}
+\begin{theorem}
+	If $\left( s _ { n } \right)$ converges to a positive real number $s$ and $\left( t _ { n } \right)$ is any sequence,
+	then $$
+	\limsup s _ { n } t _ { n } = s \cdot \limsup t _ { n }
+	$$ Here we allow the conventions $s \cdot ( + \infty ) = + \infty$ and $s \cdot ( - \infty ) = - \infty$
+	for $s > 0 .$
+\end{theorem}
+\begin{theorem}
+	Let $\left( s _ { n } \right)$ be any sequence of nonzero real numbers. Then we have
+	$$\quad \liminf \left| \frac { s _ { n + 1 } } { s _ { n } } \right| \leq \liminf \left| s _ { n } \right| ^ { 1 / n } \leq \limsup \left| s _ { n } \right| ^ { 1 / n } \leq \limsup \left| \frac { s _ { n + 1 } } { s _ { n } } \right|$$
+\end{theorem}
 \begin{corollary}
 	If $\lim \left| \frac { s _ { n + 1 } } { s _ { n } } \right|$ exists $[$ and equals $L ] ,$ then $\lim \left| s _ { n } \right| ^ { 1 / n } $ exists $[$ and
 	equals $L ] .$
 \end{corollary}
+\section{Series}
+\begin{theorem}[Ratio Test]
+A series $\sum a_{n}$ of nonzero terms
+\begin{enumerate}
+	\item Converges absolutely if limsup $\left| a _ { n + 1 } / a _ { n } \right| < 1$
+	\item Diverges if liminf $\left| a _ { n + 1 } / a _ { n } \right| > 1$
+	\item Otherwise liminf $\left| a _ { n + 1 } / a _ { n } \right| \leq 1 \leq \limsup \left| a _ { n + 1 } / a _ { n } \right|$ and the test gives no information.
+\end{enumerate}
+\end{theorem}
+
 
 \section{Uniform Continuity}
 \begin{theorem}

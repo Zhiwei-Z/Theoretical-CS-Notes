@@ -326,6 +326,44 @@ Given any $(a_n)$, one of the following holds true:
 	$\left( S _ { n } \right)$ is a sequence of Riemann sums, with corresponding partitions $P _ { n } ,$ satisfying lim $_ { n } \operatorname { mesh } \left( P _ { n } \right) = 0 .$ Then the sequence $\left( S _ { n } \right)$ converges
 	to $\int _ { a } ^ { b } f .$
 \end{corollary}
+\begin{theorem}
+	Every monotonic function $f$ on $[ a , b ]$ is integrable.
+\end{theorem}
+\begin{theorem}
+	Every continuous function $f$ on $[ a , b ]$ is integrable.
+\end{theorem}
+\begin{theorem}
+	If $f$ is integrable on $[ a , b ] ,$ then $| f |$ is integrable on $[ a , b ]$ and $$
+	\left| \int _ { a } ^ { b } f \right| \leq \int _ { a } ^ { b } | f |
+	$$.
+\end{theorem}
+\begin{theorem}
+	If $f$ is a piecewise continuous function or a bounded piecewise
+	monotonic function on $[ a , b ] ,$ then $f$ is integrable on $[ a , b ] .$
+\end{theorem}
+\begin{theorem}[IVT for integrals]
+	If $f$ is a continuous function on $[ a , b ] ,$ then for at least one $x$ in $( a , b )$
+	we have $$
+	f ( x ) = \frac { 1 } { b - a } \int _ { a } ^ { b } f
+	$$
+\end{theorem}
+\begin{theorem}[Dominated Convergence Theorem]
+	Suppose $\left( f _ { n } \right)$ is a sequence of integrable functions on $[ a , b ]$ and $f _ { n } \rightarrow$
+	$f$ pointwise where $f$ is an integrable function on $[ a , b ]$ . If there exists
+	an $M > 0$ such that $\left| f _ { n } ( x ) \right| \leq M$ for all $n$ and all $x$ in $[ a , b ] ,$ then $$
+	\lim _ { n \rightarrow \infty } \int _ { a } ^ { b } f _ { n } ( x ) d x = \int _ { a } ^ { b } \lim _ { n \rightarrow \infty } f _ { n } ( x ) d x
+	$$
+\end{theorem}
+\begin{corollary}[Monotone Convergence Theorem]
+	Suppose $\left( f _ { n } \right)$ is a sequence of integrable functions on $[ a , b ]$ such that
+	$f _ { 1 } ( x ) \leq f _ { 2 } ( x ) \leq \cdots$ for all $x$ in $[ a , b ] .$ Suppose also that $f _ { n } \rightarrow f$
+	pointwise where $f$ is an integrable function on $[ a , b ] .$ Then $$
+	\lim _ { n \rightarrow \infty } \int _ { a } ^ { b } f _ { n } ( x ) d x = \int _ { a } ^ { b } \lim _ { n \rightarrow \infty } f _ { n } ( x ) d x
+	$$
+\end{corollary}
+
+\section{Fundamental Theorem of Calculus}
+
 \end{document}
 
 

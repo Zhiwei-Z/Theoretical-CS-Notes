@@ -224,9 +224,36 @@ A series $\sum a_{n}$ of nonzero terms
 	decreasing $[ x _ { 1 } < x _ { 2 }$ implies $f \left( x _ { 1 } \right) > f \left( x _ { 2 } \right) ]$
 \end{theorem}
 \section{Uniform Continuity}
+\begin{definition}
+	Let $f$ be a real-valued function defined on a set $S \subseteq \mathbb { R } .$ Then $f$ is
+	uniformly continuous on $S$ if for each $\epsilon > 0, \exists \sigma > 0$ such that, $x, y \in \operatorname{dom}(f) \& |x - y| < \sigma$ imply $|f(x) - f(y)|< \epsilon$.
+\end{definition}
+
 \begin{theorem}
-	Pass. ...
+	If $f$ is continuous on a closed interval $[ a , b ] ,$ then $f$ is uniformly
+	continuous on $[ a , b ] .$
 \end{theorem}
+
+\begin{theorem}
+	If $f$ is uniformly continuous on a set $S$ and $\left( s _ { n } \right)$ is a Cauchy sequence
+	in $S ,$ then $\left( f \left( s _ { n } \right) \right)$ is a Cauchy sequence.
+\end{theorem}
+\begin{definition}[Extension of a fucntion]
+	We say a function $\tilde { f }$ is an extension of a function $f$ if $$
+	\operatorname { dom } ( f ) \subseteq \operatorname { dom } ( \tilde { f } ) \quad \text { and } \quad f ( x ) = \tilde { f } ( x ) \text { for all } x \in \operatorname { dom } ( f )
+	$$
+\end{definition}
+\begin{theorem}
+	A real-valued function $f$ on $( a , b )$ is uniformly continuous on $( a , b )$
+	if and only if it can be extended to a continuous function $\tilde { f }$ on $[ a , b ]$
+\end{theorem}
+
+\begin{theorem}
+	Let $f$ be a continuous function on an interval I $[ I$ may be bounded
+	or unbounded]. Let $I ^ { \circ }$ be the interval obtained by removing from $I$ any endpoints that happen to be in I. If $f$ is differentiable on $I ^ { \circ }$ and
+	if $f ^ { \prime }$ is bounded on $I ^ { \circ }$ , then $f$ is uniformly continuous on $I .$
+\end{theorem}
+
 \section{Power Series}
 Given power series $\sum _ { n = 0 } ^ { \infty } a _ { n } x ^ { n }$
 \begin{theorem}
@@ -250,6 +277,33 @@ Given any $(a_n)$, one of the following holds true:
 	
 	Also notice that $\lim \left| \frac { a _ { n + 1 } } { a _ { n } } \right| = \beta$, therefore most of the time we will use $\lim \left| \frac { a _ { n + 1 } } { a _ { n } } \right|$ as it's easier to compute thatn $\beta$.
 \end{theorem}
+\section{Uniform Convergence}
+\begin{definition}[\textbf{Pointwise Convergence}]
+	Let $\left( f _ { n } \right)$ be a sequence of real-valued functions defined on a set $S \subseteq$
+	$\mathbb { R } .$ The sequence $\left( f _ { n } \right)$ converges pointwise [i.e., at each point] to a
+	function $f$ defined on $S$ if $$
+	\lim _ { n \rightarrow \infty } f _ { n } ( x ) = f ( x ) \text { for all } x \in S
+	$$
+\end{definition}
+
+\begin{definition}[\textbf{Uniform Convergence}]
+	Let $\left( f _ { n } \right)$ be a sequence of real-valued functions defined on a set
+	$S \subseteq \mathbb { R } .$ The sequence $\left( f _ { n } \right)$ converges uniformly on $S$ to a function $f$
+	defined on $S$ if for each $\epsilon > 0$ there exists a number $N$ such that
+	$\left| f _ { n } ( x ) - f ( x ) \right| < \epsilon$ for all $x \in S$ and all $n > N$
+\end{definition}
+
+\begin{theorem}
+	The uniform limit of continuous functions is continuous. More pre-
+	cisely, let $\left( f _ { n } \right)$ be a sequence of functions on a set $S \subseteq \mathbb { R } ,$ suppose $f _ { n } \rightarrow f$ uniformly on $S ,$ and suppose $S = \operatorname { dom } ( f ) .$ If each $f _ { n }$ is
+	continuous at $x _ { 0 }$ in $S$ , then $f$ is continuous at $x _ { 0 } . [$So if each $f _ { n }$ is continuous on $S ,$ then $f$ is continuous on $S . ]$
+\end{theorem}
+\begin{proof}[proof sketch]
+	\textbf{$\epsilon/3$ argument.}\\
+	$$
+	\left| f ( x ) - f \left( x _ { 0 } \right) \right| \leq \left| f ( x ) - f _ { n } ( x ) \right| + \left| f _ { n } ( x ) - f _ { n } \left( x _ { 0 } \right) \right| + \left| f _ { n } \left( x _ { 0 } \right) - f \left( x _ { 0 } \right) \right|
+	$$
+\end{proof}
 \section{More on Uniform Convergence}
 \begin{theorem}
 	Let $\left( f _ { n } \right)$ be a sequence of continuous functions on $[ a , b ] ,$ and suppose

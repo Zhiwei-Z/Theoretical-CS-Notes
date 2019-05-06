@@ -61,6 +61,33 @@
 \author{Zhiwei Zhang}
  
 \maketitle
+
+\section{Introduction}
+\begin{theorem}[Complete Axiom]
+	Every nonempty subset $S$ of $\mathbb { R }$ that is bounded above has a least upper
+	bound. In other words, supS exists and is a real number.
+\end{theorem}
+
+\section{Monotone Sequence and Cauchy Sequences}
+\begin{theorem}
+	All bounded monotone sequences converge.
+\end{theorem}
+\begin{definition}
+	A sequence $\left( s _ { n } \right)$ of real numbers is called a Cauchy sequence if
+	for each $\epsilon > 0$ there exists a number $N$ such that
+	$m , n > N$ implies $\left| s _ { n } - s _ { m } \right| < \epsilon$
+\end{definition}
+\begin{lemma}
+	Convergent sequences are Cauchy sequences.
+\end{lemma}
+
+\begin{theorem}
+	A sequence is a convergent sequence if and only if it is a Cauchy sequence.
+\end{theorem}
+\begin{proof}[sketch proof]$$
+	\left| s _ { n } - s _ { m } \right| = \left| s _ { n } - s + s - s _ { m } \right| \leq \left| s _ { n } - s \right| + \left| s - s _ { m } \right|
+	$$
+\end{proof}
 \section{Limsup and Liminf}
 \begin{corollary}
 	If $\lim \left| \frac { s _ { n + 1 } } { s _ { n } } \right|$ exists $[$ and equals $L ] ,$ then $\lim \left| s _ { n } \right| ^ { 1 / n } $ exists $[$ and

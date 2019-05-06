@@ -88,6 +88,47 @@
 	\left| s _ { n } - s _ { m } \right| = \left| s _ { n } - s + s - s _ { m } \right| \leq \left| s _ { n } - s \right| + \left| s - s _ { m } \right|
 	$$
 \end{proof}
+
+\section{Subsequences}
+\begin{theorem}
+	Let $(s_n)$ be a sequence. If $t$ is in $\mathbb { R } ,$ then there is a subsequence of $\left( s _ { n } \right)$ converging to $t$
+	if and only if the set $\left\{ n \in \mathbb { N } : \left| s _ { n } - t \right| < \epsilon \right\}$ is infinite for all
+	$\epsilon > 0$
+\end{theorem}
+
+\begin{theorem}
+	If the sequence $\left( s _ { n } \right)$ converges, then every subsequence converges to
+	the same limit.
+\end{theorem}
+
+\begin{theorem}
+	Every sequence $(sn)$ has a monotonic subsequence.
+\end{theorem}
+
+\begin{theorem}[Bolzano-Weierstrass Theorem]
+	Every bounded sequence has a convergent subsequence.
+\end{theorem} 
+\begin{theorem}
+	Let $\left( s _ { n } \right)$ be any sequence. There exists a monotonic subsequence
+	whose limit is limsup $s _ { n } ,$ and there exists a monotonic subsequence
+	whose limit is liminf $s _ { n } .$
+\end{theorem}
+
+\begin{theorem}
+	Let $\left( s _ { n } \right)$ be any sequence in $\mathbb { R } ,$ and let $S$ denote the set of
+	subsequential limits of $\left( s _ { n } \right) .$
+	\begin{itemize}
+		\item $S$ is nonempty
+		\item $\sup S = \limsup s _ { n }$ and inf $S = \liminf s _ { n }$
+		\item $\lim s _ { n }$ exists if and only if $S$ has exactly one element, namely $\lim s _ { n } .$
+	\end{itemize}
+\end{theorem}
+
+\begin{theorem}
+	Let $S$ denote the set of subsequential limits of a sequence $\left( s _ { n } \right) .$ Sup-
+	pose $\left( t _ { n } \right)$ is a sequence in $S \cap$ and that $t = \lim t _ { n } .$ Then $t$ belongs
+	to $S $ (which means $S$ is \textbf{closed}).
+\end{theorem}
 \section{Limsup and Liminf}
 \begin{corollary}
 	If $\lim \left| \frac { s _ { n + 1 } } { s _ { n } } \right|$ exists $[$ and equals $L ] ,$ then $\lim \left| s _ { n } \right| ^ { 1 / n } $ exists $[$ and
